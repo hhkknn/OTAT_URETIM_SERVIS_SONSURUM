@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E2D0CB1C-C553-48A8-82FF-B5CD87008DA2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AIF.UVTService</RootNamespace>
+    <AssemblyName>AIF.UVTService</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44390</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FireSharp, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FireSharp.2.0.4\lib\portable-net45+sl5+wp8+win8\FireSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.15\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="SAPBusinessOneSDK, Version=1.0.0.1, Culture=neutral, PublicKeyToken=c7c3cb60e45d119f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\SAP\SAP Business One SDK\Lib\SAPBusinessOneSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.5\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UVTService.asmx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DatabaseLayer\GetConnectionAsString.cs" />
+    <Compile Include="Helper\parseNumber.cs" />
+    <Compile Include="Models\AnalizTemizlik.cs" />
+    <Compile Include="Models\AyranAnalizTakibi.cs" />
+    <Compile Include="Models\TazePeynirProsesGunlukAnaliz.cs" />
+    <Compile Include="Models\TazePeynirSalamuraSu.cs" />
+    <Compile Include="Models\BulkKulturAnaliz.cs" />
+    <Compile Include="Models\KaliteListesi.cs" />
+    <Compile Include="Models\FSAPKY006_1_1.cs" />
+    <Compile Include="Models\FSAPKY009_1.cs" />
+    <Compile Include="Models\FSAPKY003_2.cs" />
+    <Compile Include="Models\FSAPKY012_2.cs" />
+    <Compile Include="Models\FSAPKY012_1.cs" />
+    <Compile Include="Models\FSAPKY011_1.cs" />
+    <Compile Include="Models\FSAPKY010_1.cs" />
+    <Compile Include="Models\FSAPKY008_1.cs" />
+    <Compile Include="Models\FSAPKY002_1.cs" />
+    <Compile Include="Models\FSAPKY002_3.cs" />
+    <Compile Include="Models\FSAPKY002_2.cs" />
+    <Compile Include="Models\FSAPKY007_3.cs" />
+    <Compile Include="Models\FSAPKY007_2.cs" />
+    <Compile Include="Models\FSAPKY007_1.cs" />
+    <Compile Include="Models\FSAPKY005_3_1.cs" />
+    <Compile Include="Models\FSAPKY005_2.cs" />
+    <Compile Include="Models\FSAPKY004_2.cs" />
+    <Compile Include="Models\FSAPKY004_1_1.cs" />
+    <Compile Include="Models\FSAPKY003_1.cs" />
+    <Compile Include="Models\FSAPKY001.cs" />
+    <Compile Include="Models\AyranProsesTakipAnaliz.cs" />
+    <Compile Include="Models\AyranYardimciMalzemeGunlukOzet.cs" />
+    <Compile Include="Models\BusinessPartners.cs" />
+    <Compile Include="Models\Contacts.cs" />
+    <Compile Include="Models\Discount.cs" />
+    <Compile Include="Models\GetConnectionString.cs" />
+    <Compile Include="Models\InventoryGenEntry.cs" />
+    <Compile Include="Models\InventoryGenExist.cs" />
+    <Compile Include="Models\Items.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\LorProsesTakipAnaliz.cs" />
+    <Compile Include="Models\Orders.cs" />
+    <Compile Include="Models\PaketlenenAyranProsesOzellikleri.cs" />
+    <Compile Include="Models\PaletYapma.cs" />
+    <Compile Include="Models\PastoizasyonProsesTakipAnaliz.cs" />
+    <Compile Include="Models\ProductionOrder.cs" />
+    <Compile Include="Models\PurchaseOrder.cs" />
+    <Compile Include="Models\Response.cs" />
+    <Compile Include="Models\RotaDurum.cs" />
+    <Compile Include="Models\ConnectionList.cs" />
+    <Compile Include="Models\TamYagliAyranGunlukOzet.cs" />
+    <Compile Include="Models\TazePeynirProsesTakipAnaliz.cs" />
+    <Compile Include="Models\TazePeynirProsesTakipAnaliz2.cs" />
+    <Compile Include="Models\TelemeAnalizTakibi.cs" />
+    <Compile Include="Models\TelemeMamulTakipAnaliz.cs" />
+    <Compile Include="Models\TelemeProsesTakipAnaliz.cs" />
+    <Compile Include="Models\TereyagProsesTakipAnaliz.cs" />
+    <Compile Include="Models\TereyagGunlukAnaliz.cs" />
+    <Compile Include="Models\TereyagProsesTakipAnaliz2.cs" />
+    <Compile Include="Models\TostPeynirProsesTakipAnaliz.cs" />
+    <Compile Include="Models\TostPeynirProsesTakipAnaliz2.cs" />
+    <Compile Include="Models\YarimYagliAyranGunlukOzet.cs" />
+    <Compile Include="Models\YogurtMamulAnaliz.cs" />
+    <Compile Include="Models\YogurtProsesTakipAnaliz.cs" />
+    <Compile Include="Models\YogurtYardimciMalzeme.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SAPLayer\AddContacts.cs" />
+    <Compile Include="SAPLayer\AddInventoryGenEntry.cs" />
+    <Compile Include="SAPLayer\AddInventoryGenExist.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateTazePeynirGunlukAnaliz.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateTazePeynirSalamuraSu.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateBulkKulturAnaliz.cs" />
+    <Compile Include="SAPLayer\AddOrUpdatePalet.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateKaliteSonuc.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateFSAPKY003_2.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateFSAPKY006_1 _1.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateFSAPKY009_1.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateFSAPKY012_2.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateFSAPKY012_1.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateFSAPKY011_1.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateFSAPKY010_1.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateFSAPKY008_1.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateFSAPKY002_3.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateFSAPKY002_2.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateFSAPKY002_1.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateFSAPKY007_3.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateFSAPKY007_2.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateAyranAnalizTakibi.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateFSAPKY007.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateFSAPKY005_3_1.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateFSAPKY005_2.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateFSAPKY004_2.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateFSAPKY004_1 _1.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateFSAPKY003_1.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateFSAPKY001.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateAyranProsesAnaliz.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateAyranYardimciMalzeme.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateDiscount.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateLorProsessAnaliz.cs" />
+    <Compile Include="SAPLayer\AddOrUpdatePakelenenAyranProsesOzellikleri.cs" />
+    <Compile Include="SAPLayer\AddOrUpdatePastorizasyonProsesAnaliz.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateRotaDurum.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateTamYagliAyranOzet.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateTazePeynirProsesAnaliz2.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateTazePeynirProsessAnaliz.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateTelemeAnalizTakibi.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateTelemeMamulAnalizTakip.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateTelemeProsesAnalizTakip.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateTemizlik.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateTereyagProsessAnaliz.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateTereyagGunlukAnaliz.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateTereyagProsessAnaliz2.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateTostPeynirProsesAnaliz.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateTostPeynirProsesAnaliz2.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateYarimYagliAyranOzet.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateYogurtMamulAnaliz.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateYogurtProsesAnaliz.cs" />
+    <Compile Include="SAPLayer\AddOrUpdateYogurtYardimciMalzeme.cs" />
+    <Compile Include="SAPLayer\GetPaletDetay.cs" />
+    <Compile Include="SAPLayer\GetPaletNumarasiCustomTable.cs" />
+    <Compile Include="SAPLayer\UpdateProductionOrders.cs" />
+    <Compile Include="SAPLayer\AddProductionOrders.cs" />
+    <Compile Include="SAPLayer\AddPurchaseDeliveryNotes.cs" />
+    <Compile Include="SAPLayer\AddSalesOrder.cs" />
+    <Compile Include="SAPLayer\BusinessPartnerAdd.cs" />
+    <Compile Include="SAPLayer\BusinessPartnerUpdate.cs" />
+    <Compile Include="SAPLayer\GetCompanyList.cs" />
+    <Compile Include="SAPLayer\GetCustomers.cs" />
+    <Compile Include="SAPLayer\GetCustomerSpecialPrice.cs" />
+    <Compile Include="SAPLayer\GetDiscount.cs" />
+    <Compile Include="SAPLayer\GetEmployess.cs" />
+    <Compile Include="SAPLayer\GetKaliteDetayListesi.cs" />
+    <Compile Include="SAPLayer\GetOrders.cs" />
+    <Compile Include="SAPLayer\GetProductionOrders.cs" />
+    <Compile Include="SAPLayer\GetProducts.cs" />
+    <Compile Include="SAPLayer\LoginCompany.cs" />
+    <Compile Include="SAPLayer\UpdateContacts.cs" />
+    <Compile Include="UVTService.asmx.cs">
+      <DependentUpon>UVTService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="nlog.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64507</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44390/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
